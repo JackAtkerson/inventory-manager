@@ -1,0 +1,31 @@
+{
+  "name": "inventory-manager",
+  "version": "1.0.0",
+  "description": "This application was built to allow users to find new recipes and share their own recipes. On the homepage of the site, the user can see the featured recipes. They also have the ability to view all recipes or to view recipes by category (Appetizers, Breakfast, Entree, and Dessert). If the user would like to share their own recipes or to comment on existing recipes, they can sign up for a Git Cookin account. Once signed up, they will have access to their dashboard which only shows their own added recipes. From the dashboard, they can update or edit existing recipes and add new recipes. When clicking on any recipe, they will get more information including ingredients, recipe steps and all comments. If logged in, they will be able to add their own comments on this page.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seeds": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmashoro/pp-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmashoro/pp-2/issues"
+  },
+  "homepage": "https://github.com/tmashoro/pp-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.5"
+  }
+}

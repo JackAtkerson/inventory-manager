@@ -1,0 +1,83 @@
+<aside id="fh5co-hero">
+    <div class="hero-banner jumbotron jumbotron-fluid">
+        
+        <video autoplay muted loop>    
+            <source src="" data-src="/images/ECommerce.mp4" type="video/mp4">
+            </video>
+        <div class="container">
+            <div class="col-md-12 text-center">
+                <div class="desc">
+                    <p>Selling products and services over the internet took on new importance during the COVID-19 pandemic, as business owners and consumers had no choice but to embrace e-commerce. That shift is here to stay, presenting opportunities for small business owners to thrive online.</p>
+                        <hr>
+                    <p>Stay Safe. Stay Healthy.</p>
+                    <h2><a href="/categories" class="btn btn-primary btn-outline btn-lg">View Categories</a></h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</aside>
+
+<div id="fh5co-services" class="fh5co-bg-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 text-center">
+                <a href="/categories/Coffee">
+                    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                        <span class="icon">
+                            <i class="flaticon-coffee"></i>
+                        </span>
+                        <h3 class="btn btn-primary btn-outline">Coffee</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-3 text-center">
+                <a href="/categories/Tea">
+                    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                        <span class="icon">
+                            <i class="flaticon-tea"></i>
+                        </span>
+                        <h3 class="btn btn-primary btn-outline">Tea</h3>
+                        
+                    
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-3 text-center">
+                <a href="/categories/Equipment">
+                    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                        <span class="icon">
+                            <i class="flaticon-equipment"></i>
+                        </span>
+                        <h3 class="btn btn-primary btn-outline">Equipment</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-3 text-center">
+                <a href="/categories/Merchandise">
+                    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                        <span class="icon">
+                            <i class="flaticon-merchandise"></i>
+                        </span>
+                        <h3 class="btn btn-primary btn-outline">Merchandise</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fh5co-started">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>Featured Products</h2>
+            </div>
+        </div>
+        <div class="row">
+        {{#each products as |product|}}
+        {{> product-info product }}
+        {{/each}}
+        </div>
+    </div>
+</div>

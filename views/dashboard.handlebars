@@ -1,0 +1,17 @@
+<div id="fh5co-product">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>My Products</h2>
+                <p class="mt-40">
+                    <a href="/dashboard/new" class="btn btn-primary btn-outline btn-lg">Add a product</a>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {{#each products as |product|}}
+            {{> my-product-info product }}
+            {{/each}}
+        </div>
+    </div>
+</div>
