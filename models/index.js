@@ -2,6 +2,7 @@ const User = require('./User');
 const Comment = require('./Comment');
 const Product = require('./Product');
 const Category = require('./Category');
+const Warehouse = require('./Warehouse');
 
 User.hasMany(Product, {
 	foreignKey : 'user_id'
@@ -40,4 +41,4 @@ Category.hasMany(Product, {
 //	through:ProductTag
 //})
 
-module.exports = { User, Comment, Category, Product};
+module.exports = { User, Comment, Category, Product, Warehouse};
