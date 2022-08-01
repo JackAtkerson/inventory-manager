@@ -27,4 +27,4 @@ Product.belongsTo(Category, {
     foreignKey: 'category_id'
 });
 
-module.exports = { User, Comment, Category, Product, Warehouse};
+module.exports = { User, Category, Product, Warehouse};

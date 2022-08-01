@@ -15,11 +15,19 @@ Category.init(
         category_name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        warehouse_id: {
+            type: DataTypes.INTEGER,
+            allownull: false,
+            references: {
+                model: 'warehouse',
+                key: 'id'
+            }
         }
     },
     {
         sequelize,
-       // timestamps: false,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'category'
