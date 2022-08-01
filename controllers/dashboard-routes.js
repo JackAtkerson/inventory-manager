@@ -3,20 +3,17 @@ const sequelize = require('../config/connection');
 const { User, Warehouse, Category, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/warehouse/:id', (req, res) => {
-  Warehouse.findOne({
-    where: {
-      id: req.params.id
-    },
-
-  })
-})
-
 router.get('/', (req, res) => {
   res.render('dashboard', {loggedIn: true})
 });
 
+router.get('/warehouse/:id', (req, res) => {
+  res.render('single-warehouse', {loggedIn: true})
+});
 
+router.get('/create-warehouse', (req, res) => {
+  res.render('create-warehouse', {loggedIn: true})
+});
 
 // gets all products posted by user that is currently logged in
 /*router.get('/', withAuth, (req, res) => {
