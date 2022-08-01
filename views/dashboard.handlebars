@@ -2,15 +2,28 @@
     <div class="container">
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                <h2>My Products</h2>
+                <h2>My Warehouses</h2>
                 <p class="mt-40">
-                    <a href="/dashboard/new" class="btn btn-primary btn-outline btn-lg">Add a product</a>
+                    <a href="/dashboard/new" class="btn btn-primary btn-outline btn-lg">Create New Warehouse</a>
                 </p>
             </div>
         </div>
+    </div>
+</div>
+<div id="fh5co-services" class="fh5co-bg-section">
+    <div class="container">
         <div class="row">
-            {{#each products as |product|}}
-            {{> my-product-info product }}
+            {{#each warehouse}}
+            <div class="col-md-3 col-sm-3 text-center">
+                <a href="/warehouse/{{id}}">
+                    <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                        <span class="icon">
+                            <i class="flaticon-coffee"></i>
+                        </span>
+                        <h3 class="btn btn-primary btn-outline">{{warehouse_name}}</h3>
+                    </div>
+                </a>
+            </div>
             {{/each}}
         </div>
     </div>

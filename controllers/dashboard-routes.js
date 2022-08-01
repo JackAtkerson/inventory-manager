@@ -1,10 +1,25 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Recipe, User, Comment, Product } = require('../models');
+const { User, Warehouse, Category, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/warehouse/:id', (req, res) => {
+  Warehouse.findOne({
+    where: {
+      id: req.params.id
+    },
+
+  })
+})
+
+router.get('/', (req, res) => {
+  res.render('dashboard', {loggedIn: true})
+});
+
+
+
 // gets all products posted by user that is currently logged in
-router.get('/', withAuth, (req, res) => {
+/*router.get('/', withAuth, (req, res) => {
     console.log(req.session.user_id)
     Product.findAll({
       where: {
@@ -34,7 +49,7 @@ router.get('/', withAuth, (req, res) => {
   })
   .then(dbPostData => {
     const products = dbPostData.map(product => product.get({ plain: true }));
-    res.render('dashboard', { products, loggedIn: true });
+    res.render('dashboard', { loggedIn: true });
   })
   .catch(err => {
     console.log(err);
@@ -78,5 +93,5 @@ router.get('/edit/:id', withAuth, (req, res) => {
         res.status(500).json(err);
         });
 })
-
+*/
 module.exports = router;
