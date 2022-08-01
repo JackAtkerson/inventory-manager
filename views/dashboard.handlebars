@@ -13,9 +13,9 @@
 <div id="fh5co-services" class="fh5co-bg-section">
     <div class="container">
         <div class="row">
-            {{#each warehouse}}
+            {{#each warehouses as |warehouse|}}
             <div class="col-md-3 col-sm-3 text-center">
-                <a href="/warehouse/{{id}}">
+                <a href="/dashboard/warehouse/{{id}}">
                     <div class="feature-center animate-box" data-animate-effect="fadeIn">
                         <span class="icon">
                             <i class="flaticon-coffee"></i>
