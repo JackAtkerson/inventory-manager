@@ -7,7 +7,7 @@ const warehouseRoutes = require('./warehouse-routes');
 
 
 router.use('/users', userRoutes);
-router.use('/warehouse', warehouseRoutes);
+router.use('/warehouses', warehouseRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/products', productRoutes);
 

@@ -15,7 +15,7 @@ Product.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        stock: {
+        quantity: {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0,
