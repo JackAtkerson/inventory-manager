@@ -17,11 +17,19 @@ Warehouse.init(
         },
         description: {
             type: DataTypes.STRING
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
         sequelize,
-       // timestamps: false,
+        //timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'warehouse'

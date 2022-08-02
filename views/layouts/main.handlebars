@@ -24,18 +24,8 @@
                     </div>
                     <div class="col-md-8 col-xs-6 text-right menu-1">
                         <ul>
-                            <li class="has-dropdown">
-                                <a href="/products">Products</a>
-                                <ul class="dropdown">
-                                   <li><a href="/products/product_name/Light Roast Coffee">Coffee</a></li>
-                                    <li><a href="/products/product_name/Match">Tea</a></li>
-                                    <li><a href="/products/product_name/Oat Milk">Milk</a></li>
-                                    <li><a href="/products/product_name/Coffee Filters">Equipment</a></li>
-                                    <li><a href="/products/product_name/Large t-Shirt">Merchandise</a></li>
-                                </ul>
-                            </li>
                             {{#if loggedIn}}
-                            <li><a href="/dashboard">Stock-Database</a></li>
+                            <li><a href="/dashboard">My Dashboard</a></li>
                             <li><a id="logout">Logout</a></li>
                             {{else}}
                             <li><a href="/login">Login</a></li>
