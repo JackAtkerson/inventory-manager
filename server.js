@@ -6,8 +6,11 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+<<<<<<< HEAD
 console.log("PID: ", process.pid);
 
+=======
+>>>>>>> b47493e2194114901577714604aaaf9fbdd1a1b3
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
