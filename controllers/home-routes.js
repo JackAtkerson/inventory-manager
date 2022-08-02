@@ -1,35 +1,19 @@
 const router = require('express').Router();
 const { Op } = require('sequelize');
-const { User, Comment, Product } = require('../models');
+const { User } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log(req.session)
-    Product.findAll({
-        where: {
-          id: {
-            [Op.between]: [1,6]
-          }
-        },
-        
-        order: [['created_at', 'DESC']], 
-        include: [
-            {
-              model: User,
-              attributes: ['username']
-            }
-        ]
-    })
-        .then(dbPostData => {
-          const products = dbPostData.map(product => product.get({ plain: true }));
-          res.render('homepage', {
-            products,
-            loggedIn: req.session.loggedIn
-          });
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-        });
+  res.render('homepage', { loggedIn: req.session.loggedIn });
+});
+
+//login / signup page
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login-page', { layout: 'login'});
 });
 
 // find all products
@@ -143,16 +127,6 @@ router.get('/product/category/:category', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-});
-
-//login / signup page
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login-page', { layout: 'login'});
 });
 
 module.exports = router;
