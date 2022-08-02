@@ -1,6 +1,6 @@
 const { Warehouse } = require('../models');
 
-const warhouseData = [
+const warehouseData = [
     {
         warehouse_name: 'Coffee Warehouse',
         description: 'A warehouse used to ship and store coffe, tea, and related equipment.',
