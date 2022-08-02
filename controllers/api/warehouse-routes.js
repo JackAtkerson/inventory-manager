@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Warehouse, Category } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     // find all warhouses
@@ -47,23 +48,17 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Warehouse.create({
         warehouse_name: req.body.warehouse_name,
-        description: req.body.description
+        description: req.body.description,
+        user_id: req.session.user_id
     })
-    .then(dbWarehouseData => {
-        req.session.save(() => {
-            req.body.warehouse_name = dbWarehouseData.warehouse_name;
-            req.body.description = dbWarehouseData.description;
-
-            res.json(dbWarehouseData);
+        .then(dbWarehouseData => res.json(dbWarehouseData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         })
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json(err);
-    })
-})
+});
 
 module.exports = router;
