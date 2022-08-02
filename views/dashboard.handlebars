@@ -1,4 +1,4 @@
-<div id="fh5co-product">
+<!--<div id="fh5co-product">-->
     <div class="container">
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -9,18 +9,16 @@
             </div>
         </div>
     </div>
-</div>
 <div id="fh5co-services" class="fh5co-bg-section">
     <div class="container">
         <div class="row">
             {{#each warehouses as |warehouse|}}
             <div class="col-md-3 col-sm-3 text-center">
-                <a href="/dashboard/warehouse/{{id}}">
                 <div class="card border border-dark" style="width: 18rem;">
                     <div class="card-body">
                         <h3>{{warehouse_name}}</h3>
                         <p>{{description}}</p>
-                        <a href="/dashboard/warehouse/{{id}}" class="btn btn-primary btn-outlline">Check it Out</a>
+                        <a href="/dashboard/warehouse/{{id}}" class="btn btn-primary btn-outline">Check it Out</a>
                     </div>
                 </div>
                     <!--<div class="feature-center animate-box" data-animate-effect="fadeIn">
@@ -29,7 +27,6 @@
                         </span>
                         <h3 class="btn btn-primary btn-outline">{{warehouse_name}}</h3>
                     </div>-->
-                </a>
             </div>
             {{/each}}
         </div>
